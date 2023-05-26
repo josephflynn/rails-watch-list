@@ -3,9 +3,15 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :body %>
+    <%= f.input :name %>
   </div>
+
+    <%= simple_form_for(@list) do |f| %>
+    <%= f.input :name %>
+    <%= f.association :company %>
+    <%= f.association :roles %>
+    <%= f.button :submit %>
+  <% end %>
 
   <div class="form-actions">
     <%= f.button :submit %>
