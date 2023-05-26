@@ -1,1 +1,10 @@
-<h1>This is the list of Lists</h2>
+<% title = "<h1>Favourite Movies by Category</h1>" %>
+<% poster = "https://img.freepik.com/premium-vector/set-watercolour-brush-samples-gradient-circles-with-pastel-color-palette-isolated_348818-536.jpg" %>
+<%= render "/shared/banner", title: title, poster: poster %>
+<div id="lists">
+  <% @lists.each do |list| %>
+    
+  <% end %>
+</div>
+
+<%= link_to "New List", new_list_path %>
