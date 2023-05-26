@@ -12,6 +12,12 @@ class ListsController < ApplicationController
   end
 
   def create
-    @restaurant = Restaurant.new(params.require(:list).permit(:name))
+    @list = List.new(params.require(:list).permit(:name, :image))
+    raise
+    if @list.save
+      redirect_to @list, notice: "#{@list.name} Saved."
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 end
